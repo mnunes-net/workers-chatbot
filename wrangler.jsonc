@@ -1,0 +1,29 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "worker-chatbot",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-09-27",
+	"observability": {
+		"enabled": true
+	},
+	/**
+     * This is the AI binding that was missing.
+     * It makes the `env.AI` object available in your code.
+     */
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "CONFIG",
+			"id": "634e83406bbe4601bc6ec58cc0b2d877"
+		}
+	],
+	"d1_databases": [
+		{
+			"binding": "chatbot",
+			"database_name": "chatbot",
+			"database_id": "7ee263e0-8198-4e93-acf8-10752a765948"
+		}
+	]
+}
